@@ -29,6 +29,7 @@ podTemplate(
     ]
 ) {
     node('mypod') {
+           
         // def commitId
         // stage ('Extract') {
         //     checkout scm
@@ -49,6 +50,7 @@ podTemplate(
         //         }
         //     }
         // }
+
         stage ('Deploy') {
         //    input "Deploy?"
         //    milestone(1)
@@ -56,7 +58,7 @@ podTemplate(
             container ('helm') {
                 sh "/helm init --client-only --skip-refresh"
                 // sh "/helm upgrade --install --wait --set image.repository=rohan4494/hello,image.tag=${env.BUILD_NUMBER} hello hello --namespace jenkins-master"
-                sh "/helm upgrade --install --wait my-grafana grafana/  --namespace maxedge "
+                sh "/helm upgrade --install --wait grafana grafana  --namespace maxedge "
             }
         }
     }
