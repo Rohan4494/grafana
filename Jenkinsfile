@@ -56,11 +56,11 @@ podTemplate(
         //    milestone(1)
            echo "Deploying"
             container ('helm') {
-                sh "helm init --client-only --skip-refresh"
+                sh "/helm init --client-only --skip-refresh"
                 sh "/helm ls"
                 // sh "/helm upgrade --install --wait --set image.repository=rohan4494/hello,image.tag=${env.BUILD_NUMBER} hello hello --namespace jenkins-master"
                 // sh "/helm install --wait --name my-grafana stable/grafana --namespace maxedge "
-                sh  "helm upgrade --dry-run --install my-grafana grafana --set image.repository=rohan4494/hello --namespace maxedge"
+                sh  "/helm upgrade --dry-run --install my-grafana grafana --set image.repository=rohan4494/hello --namespace maxedge"
             }
         }
     }
