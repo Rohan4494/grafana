@@ -50,8 +50,8 @@ podTemplate(
         //     }
         // }
         stage ('Deploy') {
-           input "Deploy?"
-           milestone(1)
+        //    input "Deploy?"
+        //    milestone(1)
            echo "Deploying"
             container ('helm') {
                 sh "/helm init --client-only --skip-refresh"
