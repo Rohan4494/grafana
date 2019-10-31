@@ -56,7 +56,7 @@ podTemplate(
             container ('helm') {
                 sh "/helm init --client-only --skip-refresh"
                 // sh "/helm upgrade --install --wait --set image.repository=rohan4494/hello,image.tag=${env.BUILD_NUMBER} hello hello --namespace jenkins-master"
-                sh "/helm upgrade --install my-grafana --namespace maxedge . --wait"
+                sh "/helm upgrade --install my-grafana grafana --namespace maxedge . --wait"
             }
         }
     }
