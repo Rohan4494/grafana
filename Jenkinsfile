@@ -60,7 +60,7 @@ podTemplate(
                 sh "/helm ls"
                 // sh "/helm upgrade --install --wait --set image.repository=rohan4494/hello,image.tag=${env.BUILD_NUMBER} hello hello --namespace jenkins-master"
                 // sh "/helm install --wait --name my-grafana stable/grafana --namespace maxedge "
-                sh  "/helm upgrade --dry-run --install  my-grafana grafana --namespace maxedge"
+                sh  "/helm upgrade --dry-run --install  my-grafana grafana"
             }
         }
     }
