@@ -1,5 +1,5 @@
 podTemplate(
-    label: 'mypod', 
+    label: 'helm-deploy-slave', 
     inheritFrom: 'default',
     containers: [
         // containerTemplate(
@@ -28,7 +28,7 @@ podTemplate(
         )
     ]
 ) {
-    node('mypod') {
+    node('helm-deploy-slave') {
            
         // def commitId
         // stage ('Extract') {
